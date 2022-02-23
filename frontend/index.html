@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Mi Libreria</title>
+
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
+    <!-- Bootstrap core CSS -->
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="starter-template.css" rel="stylesheet">
+  </head>
+
+  <body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+      <a class="navbar-brand" href="#">Mi libreria</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <button for="" class="btn btn-outline-primary my-2 my-sm-0" id="userNameLbl"></button>
+
+          <button for="" class="btn btn-outline-danger my-2 my-sm-0" id="logout">Salir</button>
+
+          <button id="sesionboton" class="btn btn-outline-primary my-2 my-sm-0" type="button" data-toggle="modal" data-target="#inicioSesion">Iniciar sesión</button>
+          <button id="registroboton" class="btn btn-outline-success my-2 my-sm-0" type="button" data-toggle="modal" data-target="#registroUsuario">Registro usuario</button>
+        </form>
+      </div>
+    </nav>
+
+    <main role="main" class="container">
+
+      <div class="starter-template">
+       
+        
+        <h1>Bienvenido a mi libreria</h1>
+        <p class="lead">El lugar donde puedes encontrar tus libros favoritos!</p>
+
+        <div class="row">
+          <div class="col-lg-12">                     
+          </div>          
+        </div>
+        <div class="row">
+          <div class="col-lg-8">
+            
+          </div>
+          <div class="col-lg-4">
+            <button id="btnAñadir" class="btn btn-primary" type="button">Añadir</button>
+          </div>
+        </div>
+        <br>
+        <input type="hidden" id="idLibro">
+        <div class="row" id="frmBook">
+          <div class="col-lg-12">
+            <div class="row text-center">
+              <div class="col text-center">
+                <h1 class="text-center" id="labelBookSettings">Registro de libro</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group ">
+                  <label for="titleBook1">Titulo</label>
+                  <input type="text" class="form-control" id="titleBook" aria-describedby="titleBookHelp" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group ">
+                  <label for="authorBook1">Autor</label>
+                  <input type="text" class="form-control" id="authorBook" aria-describedby="authorBookHelp" placeholder="">
+                </div>
+              </div>
+              <div class="col">
+                <div class="form-group ">
+                  <label for="isbn1">ISBN</label>
+                  <input type="text" class="form-control" id="isbnBook" aria-describedby="isbnHelp" placeholder="">
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <div class="form-group ">
+                  <label for="dateBook1">Fecha de publicación</label>
+                  <input type="date" class="form-control" id="dateBook" aria-describedby="dateBookHelp" placeholder="">
+                </div>
+              </div>
+              <div class="col">
+
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <button id="btnGuardar" class="btn btn-success" type="button">Guardar</button>
+              </div>
+              <div class="col">
+
+                <button id="btnCancelar" class="btn btn-default" type="button">Cancelar</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-12">
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Titulo</th>
+                  <th scope="col">isbn</th>
+                  <th scope="col">Autor</th>
+                  <th scope="col">Fecha Publicacion</th>
+                  <th scope="col" id="acciones">Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="books">
+              
+              </tbody>
+            </table>
+            
+          
+          </div>
+        </div>
+        
+      </div>
+
+    </main>
+    
+    <!-- Modal -->
+    <div class="modal fade" id="inicioSesion" tabindex="-1" role="dialog" aria-labelledby="inicioSesionLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="inicioSesionLabel">Inicio de sesión</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="emailLogin" aria-describedby="emailHelp" placeholder="*@mail.com">
+        
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="passwordLogin" placeholder="*****">
+              </div>
+              
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="btnIniciarSesion" class="btn btn-primary">Ingresar</button>
+            
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal fade" id="registroUsuario" tabindex="-1" role="dialog" aria-labelledby="registroUsuarioLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registroUsuarioLabel">Registro</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="form-group">
+                <label for="exampleInputuserName">Nombre de usuario</label>
+                <input type="text" class="form-control" id="userNameRegister" aria-describedby="userNameHelp" placeholder="user">
+        
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1">Email</label>
+                <input type="email" class="form-control" id="emailRegister" aria-describedby="emailHelp" placeholder="*@mail.com">
+        
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">Contraseña</label>
+                <input type="password" class="form-control" id="passwordRegister" placeholder="*****">
+              </div>
+              
+              
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="btnRegistroUsuario" class="btn btn-success">Registrar</button>
+  
+            
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+
+    
+    
+    <!-- /.container -->
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/alertify.min.js"></script>
+
+    <script src="./js/milibreria.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
