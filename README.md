@@ -1,10 +1,13 @@
-# Proyecto Final Mi Libro
+# Proyecto Final Taller de lenguajes de programación. "Mi Libreria" 2022 
 ## Autores
 
 - Valentina Villada Rendón
 -  Esteban Montoya Molina
 -  Christian Camilo Cartagena Berrio
 -  Cristian David Lagarejo Córdoba
+## Docente
+
+- ANDRÉS FELIPE GONZÁLEZ OROZCO
 
 ## Presentacion
 
